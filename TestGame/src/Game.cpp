@@ -26,7 +26,7 @@ bool Game::initialize()
     gWindow = new GameWindow("Testing a new game", 640, 480);
     gInputManager = new InputManager(gWindow->getGLWindow());
     gAudioManager = AudioManager::instance();
-    gAudioManager->loadFileIntoBuffer("gunshot.wav");
+    gAudioManager->loadFileIntoBuffer("./Resources/Audio/SoundEffects/gunshot.wav");
     return true;
 }
 void Game::update()

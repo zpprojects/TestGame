@@ -8,7 +8,6 @@
 
 #include "AudioManager.h"
 #include <AL/alut.h>
-#define FILENAME "gunshot.wav"
 
 AudioManager* AudioManager::m_instance = NULL;
 
@@ -17,10 +16,19 @@ bool AudioManager::initalize()
 {
     if(alutInit(NULL, 0) != AL_TRUE)
         return false;
+    
+    //counter for the total # of sounds loaded
     num_of_sounds = 0;
     
     list_audio_devices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
     
+    //Generate all the sources that we will be using for sound effects
+    for(sourceCounter=0;sourceCounter<NUM_SOURCES;sourceCounter++)
+    {
+        alGenSources(1, &source[sourceCounter]);
+    }
+    //set the sourceCounter back to 0 so it is ready for later
+    sourceCounter=0;
     return true;
 }
 bool AudioManager::loadFileIntoBuffer(const char *filepath)
@@ -30,7 +38,9 @@ bool AudioManager::loadFileIntoBuffer(const char *filepath)
     
     if(bufferArray[num_of_sounds] == AL_NONE)
     {
-        printf("error loading file\n");
+        printf("error loading file:");
+        printf(filepath);
+        
         int error = alGetError();
         if (error)
             printf("%s\n", alutGetErrorString(error));
@@ -43,11 +53,15 @@ bool AudioManager::loadFileIntoBuffer(const char *filepath)
 bool AudioManager::playBuffer(ALuint buffer)
 {
     
-    ALuint source;
-    alGenSources(1, &source);
-    alSourcei(source, AL_BUFFER, bufferArray[buffer]);
+    //cycle through counters
+    if(sourceCounter<NUM_SOURCES-1)
+        sourceCounter++;
+    else
+        sourceCounter=0;
+    
+    alSourcei(source[sourceCounter], AL_BUFFER, bufferArray[buffer]);
 
-    alSourcePlay(source);
+    alSourcePlay(source[sourceCounter]);
     
     return true;
 }

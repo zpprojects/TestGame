@@ -19,11 +19,11 @@
 		16951B031ACE0BF900AE37F2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951B021ACE0BF900AE37F2 /* CoreVideo.framework */; };
 		16951B091ACE1E4F00AE37F2 /* GameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16951B071ACE1E4F00AE37F2 /* GameWindow.cpp */; };
 		16951B0D1ACE249B00AE37F2 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16951B0B1ACE249B00AE37F2 /* InputManager.cpp */; };
+		16AFC3DC1DBACDE900BA15E9 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */; };
+		16AFC3E31DBAD41E00BA15E9 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16AFC3E21DBAD41E00BA15E9 /* Resources */; };
 		16E7A3F71AD19EF9005674F7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E7A3F51AD19EF9005674F7 /* AudioManager.cpp */; };
 		16E7A3F91AD19F0A005674F7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7A3F81AD19F0A005674F7 /* OpenAL.framework */; };
 		16E7A3FC1AD1AAD8005674F7 /* libalut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7A3FB1AD1AAD8005674F7 /* libalut.a */; };
-		16E7A4071AD1AE88005674F7 /* gunshot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16E7A4051AD1AE2C005674F7 /* gunshot.wav */; };
-		16E7A4081AD1B5C4005674F7 /* gunshot.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16E7A4051AD1AE2C005674F7 /* gunshot.wav */; };
 		16E7A43A1AD1F824005674F7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7A3F81AD19F0A005674F7 /* OpenAL.framework */; };
 		16E7A43B1AD1F824005674F7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951B021ACE0BF900AE37F2 /* CoreVideo.framework */; };
 		16E7A43C1AD1F824005674F7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951B001ACE0BC400AE37F2 /* IOKit.framework */; };
@@ -32,8 +32,6 @@
 		16E7A43F1AD1F824005674F7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1643890D1ACE0395001A7211 /* OpenGL.framework */; };
 		16E7A4401AD1F824005674F7 /* libalut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7A3FB1AD1AAD8005674F7 /* libalut.a */; };
 		16E7A4411AD1F824005674F7 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951AFC1ACE0B6000AE37F2 /* libglfw3.a */; };
-		16E7A4431AD1F824005674F7 /* gunshot.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16E7A4051AD1AE2C005674F7 /* gunshot.wav */; };
-		16E7A4451AD1F824005674F7 /* gunshot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16E7A4051AD1AE2C005674F7 /* gunshot.wav */; };
 		16F2FB491AD0C1910041341D /* GUIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F2FB471AD0C1910041341D /* GUIManager.cpp */; };
 		16F2FB4C1AD0C27A0041341D /* GUIScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F2FB4A1AD0C27A0041341D /* GUIScreen.cpp */; };
 		16FE40BD1AE4804600194CF9 /* GameStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FE40BB1AE4804600194CF9 /* GameStateManager.cpp */; };
@@ -43,13 +41,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		164389011ACE0384001A7211 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = usr/share/man/man1;
+			buildActionMask = 12;
+			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				16E7A4081AD1B5C4005674F7 /* gunshot.wav in CopyFiles */,
+				16AFC3E31DBAD41E00BA15E9 /* Resources in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		16E7A4421AD1F824005674F7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -57,7 +55,6 @@
 			dstPath = usr/share/man/man1;
 			dstSubfolderSpec = 16;
 			files = (
-				16E7A4431AD1F824005674F7 /* gunshot.wav in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -80,11 +77,12 @@
 		16951B081ACE1E4F00AE37F2 /* GameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameWindow.h; path = src/GameWindow/GameWindow.h; sourceTree = "<group>"; };
 		16951B0B1ACE249B00AE37F2 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InputManager.cpp; path = src/InputManager/InputManager.cpp; sourceTree = "<group>"; };
 		16951B0C1ACE249B00AE37F2 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputManager.h; path = src/InputManager/InputManager.h; sourceTree = "<group>"; };
+		16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		16AFC3E21DBAD41E00BA15E9 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = TestGame/Resources; sourceTree = "<group>"; };
 		16E7A3F51AD19EF9005674F7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioManager.cpp; path = src/AudioManager/AudioManager.cpp; sourceTree = "<group>"; };
 		16E7A3F61AD19EF9005674F7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioManager.h; path = src/AudioManager/AudioManager.h; sourceTree = "<group>"; };
 		16E7A3F81AD19F0A005674F7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		16E7A3FB1AD1AAD8005674F7 /* libalut.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libalut.a; path = ../../../../usr/local/lib/libalut.a; sourceTree = "<group>"; };
-		16E7A4051AD1AE2C005674F7 /* gunshot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gunshot.wav; path = TestGame/Resources/Audio/SoundEffects/gunshot.wav; sourceTree = "<group>"; };
 		16E7A4091AD1F76F005674F7 /* testmain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testmain.cpp; sourceTree = "<group>"; };
 		16E7A4101AD1F7C5005674F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		16E7A4491AD1F824005674F7 /* TestGame copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TestGame copy"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16AFC3DC1DBACDE900BA15E9 /* libglfw.3.2.dylib in Frameworks */,
 				16E7A3FC1AD1AAD8005674F7 /* libalut.a in Frameworks */,
 				16E7A3F91AD19F0A005674F7 /* OpenAL.framework in Frameworks */,
 				16951B031ACE0BF900AE37F2 /* CoreVideo.framework in Frameworks */,
@@ -146,11 +145,11 @@
 		164388FA1ACE0384001A7211 = {
 			isa = PBXGroup;
 			children = (
+				16AFC3E21DBAD41E00BA15E9 /* Resources */,
 				16E7A40F1AD1F7C5005674F7 /* TestMain */,
 				16951B041ACE17D700AE37F2 /* Frameworks */,
 				164389051ACE0384001A7211 /* TestGame */,
 				164389041ACE0384001A7211 /* Products */,
-				16E7A3FE1AD1ABB4005674F7 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +175,7 @@
 		16951B041ACE17D700AE37F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */,
 				16E7A3FB1AD1AAD8005674F7 /* libalut.a */,
 				16E7A3F81AD19F0A005674F7 /* OpenAL.framework */,
 				16951B021ACE0BF900AE37F2 /* CoreVideo.framework */,
@@ -227,38 +227,6 @@
 				16E7A3F61AD19EF9005674F7 /* AudioManager.h */,
 			);
 			name = AudioManager;
-			sourceTree = "<group>";
-		};
-		16E7A3FE1AD1ABB4005674F7 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				16E7A3FF1AD1ABBB005674F7 /* Audio */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		16E7A3FF1AD1ABBB005674F7 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				16E7A4011AD1ABCF005674F7 /* Music */,
-				16E7A4001AD1ABC7005674F7 /* SoundEffects */,
-			);
-			name = Audio;
-			sourceTree = "<group>";
-		};
-		16E7A4001AD1ABC7005674F7 /* SoundEffects */ = {
-			isa = PBXGroup;
-			children = (
-				16E7A4051AD1AE2C005674F7 /* gunshot.wav */,
-			);
-			name = SoundEffects;
-			sourceTree = "<group>";
-		};
-		16E7A4011AD1ABCF005674F7 /* Music */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Music;
 			sourceTree = "<group>";
 		};
 		16E7A40F1AD1F7C5005674F7 /* TestMain */ = {
@@ -366,7 +334,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E7A4071AD1AE88005674F7 /* gunshot.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +341,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E7A4451AD1F824005674F7 /* gunshot.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,9 +408,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/opt/local/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/local/lib,
+					/usr/local/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lGLEW";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -477,8 +454,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/opt/local/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/local/lib,
+					/usr/local/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-lGLEW";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -486,6 +474,7 @@
 		1643890B1ACE0384001A7211 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

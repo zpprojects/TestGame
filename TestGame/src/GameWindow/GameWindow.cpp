@@ -25,11 +25,13 @@ bool GameWindow::initWindow(const char *title, int height, int width)
     }
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    float aspectRatio = 600.0f / 800.0f;
-    glFrustum(0.5f, -0.5f, -0.5f * aspectRatio, 0.5f * aspectRatio, 1.0f, 50.0f);
-    glMatrixMode(GL_MODELVIEW);
+    //glMatrixMode(GL_PROJECTION);
+    //glLoadIdentity();
+    //float aspectRatio = 600.0f / 800.0f;
+    //glFrustum(0.5f, -0.5f, -0.5f * aspectRatio, 0.5f * aspectRatio, 1.0f, 50.0f);
+    //glMatrixMode(GL_MODELVIEW);
+    
+    
     //testing the screen functions
     testScreen = new GUIScreen();
     testScreen->loadData();
@@ -38,8 +40,12 @@ bool GameWindow::initWindow(const char *title, int height, int width)
 };
 bool GameWindow::update()
 {
-    float ratio = 600.0f / 800.0f;
-    
+    float ratio;
+    int width, height;
+    glfwGetFramebufferSize(window, &width, &height);
+    ratio = width / (float) height;
+    glViewport(0, 0, width, height);
+    glClear(GL_COLOR_BUFFER_BIT);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
@@ -54,8 +60,6 @@ bool GameWindow::update()
     glColor3f(0.f, 0.f, 1.f);
     glVertex3f(0.f, 0.6f, 0.f);
     glEnd();
-    
-    glClear(GL_COLOR_BUFFER_BIT);
     
     testScreen->update(0);
     testScreen->draw();

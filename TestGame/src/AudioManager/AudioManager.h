@@ -14,8 +14,8 @@
 #include <AL/alut.h>
 
 #define NUM_BUFFERS 64
-#define NUM_SRC 3
 #define BUFFER_SIZE 4096
+#define NUM_SOURCES 64
 
 class AudioManager
 {
@@ -28,9 +28,6 @@ public:
             m_instance = new AudioManager();
         return m_instance;
     };
-    
-    std::vector<ALuint> sourceVector;
-    std::vector<ALuint> soundBufferVector;
     
     ALuint bufferArray[NUM_BUFFERS];
     
@@ -47,10 +44,14 @@ private:
     ALCdevice *device;
     ALCcontext *context;
     
+    std::vector<ALuint> sourceVector;
+    std::vector<ALuint> soundBufferVector;
+    
     ALuint buffer[NUM_BUFFERS];
-    ALuint source[NUM_SRC];
+    ALuint source[NUM_SOURCES];
     ALuint num_of_sounds;
     
+    int sourceCounter;
     ALsizei size, freq;
     ALenum format;
     ALvoid *data;
