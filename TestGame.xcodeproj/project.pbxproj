@@ -19,6 +19,7 @@
 		16951B031ACE0BF900AE37F2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951B021ACE0BF900AE37F2 /* CoreVideo.framework */; };
 		16951B091ACE1E4F00AE37F2 /* GameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16951B071ACE1E4F00AE37F2 /* GameWindow.cpp */; };
 		16951B0D1ACE249B00AE37F2 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16951B0B1ACE249B00AE37F2 /* InputManager.cpp */; };
+		16AB28191DBD1DDD002E3242 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16AB28171DBD1DDD002E3242 /* ShaderManager.cpp */; };
 		16AFC3DC1DBACDE900BA15E9 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */; };
 		16AFC3E31DBAD41E00BA15E9 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16AFC3E21DBAD41E00BA15E9 /* Resources */; };
 		16E7A3F71AD19EF9005674F7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E7A3F51AD19EF9005674F7 /* AudioManager.cpp */; };
@@ -77,6 +78,9 @@
 		16951B081ACE1E4F00AE37F2 /* GameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameWindow.h; path = src/GameWindow/GameWindow.h; sourceTree = "<group>"; };
 		16951B0B1ACE249B00AE37F2 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InputManager.cpp; path = src/InputManager/InputManager.cpp; sourceTree = "<group>"; };
 		16951B0C1ACE249B00AE37F2 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputManager.h; path = src/InputManager/InputManager.h; sourceTree = "<group>"; };
+		16AB28171DBD1DDD002E3242 /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderManager.cpp; path = src/Graphics/ShaderManager.cpp; sourceTree = "<group>"; };
+		16AB28181DBD1DDD002E3242 /* ShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderManager.h; path = src/Graphics/ShaderManager.h; sourceTree = "<group>"; };
+		16AB281A1DBD1F3F002E3242 /* Shaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shaders.h; path = src/Graphics/Shaders.h; sourceTree = "<group>"; };
 		16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		16AFC3E21DBAD41E00BA15E9 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = TestGame/Resources; sourceTree = "<group>"; };
 		16E7A3F51AD19EF9005674F7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioManager.cpp; path = src/AudioManager/AudioManager.cpp; sourceTree = "<group>"; };
@@ -191,11 +195,10 @@
 		16951B051ACE1DE100AE37F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				16AB28161DBD1D92002E3242 /* Graphics */,
 				16FE40BA1AE4801600194CF9 /* GameStateManager */,
 				16E7A3FA1AD19F1B005674F7 /* AudioManager */,
-				16F2FB461AD0C1740041341D /* GUI */,
 				16951B0A1ACE247300AE37F2 /* InputManager */,
-				16951B061ACE1E3200AE37F2 /* GameWindow */,
 				16FE40BE1AE4882600194CF9 /* Game.cpp */,
 				16FE40BF1AE4882600194CF9 /* Game.h */,
 			);
@@ -218,6 +221,18 @@
 				16951B0C1ACE249B00AE37F2 /* InputManager.h */,
 			);
 			name = InputManager;
+			sourceTree = "<group>";
+		};
+		16AB28161DBD1D92002E3242 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				16F2FB461AD0C1740041341D /* GUI */,
+				16951B061ACE1E3200AE37F2 /* GameWindow */,
+				16AB28171DBD1DDD002E3242 /* ShaderManager.cpp */,
+				16AB28181DBD1DDD002E3242 /* ShaderManager.h */,
+				16AB281A1DBD1F3F002E3242 /* Shaders.h */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 		16E7A3FA1AD19F1B005674F7 /* AudioManager */ = {
@@ -351,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16AB28191DBD1DDD002E3242 /* ShaderManager.cpp in Sources */,
 				16FE40C01AE4882600194CF9 /* Game.cpp in Sources */,
 				16E7A3F71AD19EF9005674F7 /* AudioManager.cpp in Sources */,
 				164389071ACE0384001A7211 /* main.cpp in Sources */,

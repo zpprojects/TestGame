@@ -1,0 +1,36 @@
+//
+//  ShaderManager.cpp
+//  TestGame
+//
+//  Created by Jacob Sawyer on 10/23/16.
+//  Copyright (c) 2016 Jacob Sawyer. All rights reserved.
+//
+
+#include "ShaderManager.h"
+#include "Shaders.h"
+
+ShaderManager* ShaderManager::m_instance = NULL;
+
+ShaderManager::ShaderManager()
+{
+    
+}
+bool ShaderManager::initialize()
+{
+    GLuint fragment_shader, vertex_shader, program;
+    
+    vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertex_shader, 1, &basic_vertex_shader_text, NULL);
+    glCompileShader(vertex_shader);
+    
+    fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragment_shader, 1, &basic_fragment_shader_text, NULL);
+    glCompileShader(fragment_shader);
+    
+    program = glCreateProgram();
+    glAttachShader(program, vertex_shader);
+    glAttachShader(program, fragment_shader);
+    glLinkProgram(program);
+    
+    return true;
+}
