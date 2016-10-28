@@ -10,6 +10,8 @@
 		1601F6911B390D5D0082AC77 /* GUIComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1601F68F1B390D5D0082AC77 /* GUIComponent.cpp */; };
 		1601F6981B390E010082AC77 /* GUIMenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1601F6961B390E010082AC77 /* GUIMenuItem.cpp */; };
 		1601F6991B3914100082AC77 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E7A4101AD1F7C5005674F7 /* main.cpp */; };
+		160C67CC1DC162DC0039E3DB /* GamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 160C67CA1DC162DC0039E3DB /* GamePad.cpp */; };
+		160C67CF1DC163990039E3DB /* GamePadXbox360.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 160C67CD1DC163990039E3DB /* GamePadXbox360.cpp */; };
 		164389071ACE0384001A7211 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 164389061ACE0384001A7211 /* main.cpp */; };
 		1643890E1ACE0395001A7211 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1643890D1ACE0395001A7211 /* OpenGL.framework */; };
 		164389101ACE039B001A7211 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1643890F1ACE039B001A7211 /* GLUT.framework */; };
@@ -22,6 +24,7 @@
 		16AB28191DBD1DDD002E3242 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16AB28171DBD1DDD002E3242 /* ShaderManager.cpp */; };
 		16AFC3DC1DBACDE900BA15E9 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */; };
 		16AFC3E31DBAD41E00BA15E9 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16AFC3E21DBAD41E00BA15E9 /* Resources */; };
+		16B56F141DC024B0009B33E7 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B56F121DC024B0009B33E7 /* TextureManager.cpp */; };
 		16E7A3F71AD19EF9005674F7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E7A3F51AD19EF9005674F7 /* AudioManager.cpp */; };
 		16E7A3F91AD19F0A005674F7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7A3F81AD19F0A005674F7 /* OpenAL.framework */; };
 		16E7A3FC1AD1AAD8005674F7 /* libalut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7A3FB1AD1AAD8005674F7 /* libalut.a */; };
@@ -35,6 +38,7 @@
 		16E7A4411AD1F824005674F7 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951AFC1ACE0B6000AE37F2 /* libglfw3.a */; };
 		16F2FB491AD0C1910041341D /* GUIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F2FB471AD0C1910041341D /* GUIManager.cpp */; };
 		16F2FB4C1AD0C27A0041341D /* GUIScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F2FB4A1AD0C27A0041341D /* GUIScreen.cpp */; };
+		16F87C081DC116FB00D0AA02 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F87C051DC113BA00D0AA02 /* libSOIL.a */; };
 		16FE40BD1AE4804600194CF9 /* GameStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FE40BB1AE4804600194CF9 /* GameStateManager.cpp */; };
 		16FE40C01AE4882600194CF9 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16FE40BE1AE4882600194CF9 /* Game.cpp */; };
 /* End PBXBuildFile section */
@@ -66,6 +70,10 @@
 		1601F6901B390D5D0082AC77 /* GUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIComponent.h; path = src/GUI/GUIComponents/GUIComponent.h; sourceTree = "<group>"; };
 		1601F6961B390E010082AC77 /* GUIMenuItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIMenuItem.cpp; path = src/GUI/GUIComponents/GUIMenuItem.cpp; sourceTree = "<group>"; };
 		1601F6971B390E010082AC77 /* GUIMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIMenuItem.h; path = src/GUI/GUIComponents/GUIMenuItem.h; sourceTree = "<group>"; };
+		160C67CA1DC162DC0039E3DB /* GamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamePad.cpp; path = src/InputManager/GamePad.cpp; sourceTree = "<group>"; };
+		160C67CB1DC162DC0039E3DB /* GamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePad.h; path = src/InputManager/GamePad.h; sourceTree = "<group>"; };
+		160C67CD1DC163990039E3DB /* GamePadXbox360.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamePadXbox360.cpp; path = src/InputManager/GamePadXbox360.cpp; sourceTree = "<group>"; };
+		160C67CE1DC163990039E3DB /* GamePadXbox360.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePadXbox360.h; path = src/InputManager/GamePadXbox360.h; sourceTree = "<group>"; };
 		164389031ACE0384001A7211 /* TestGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		164389061ACE0384001A7211 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1643890D1ACE0395001A7211 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -83,6 +91,8 @@
 		16AB281A1DBD1F3F002E3242 /* Shaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shaders.h; path = src/Graphics/Shaders.h; sourceTree = "<group>"; };
 		16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		16AFC3E21DBAD41E00BA15E9 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = TestGame/Resources; sourceTree = "<group>"; };
+		16B56F121DC024B0009B33E7 /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureManager.cpp; path = src/Graphics/TextureManager.cpp; sourceTree = "<group>"; };
+		16B56F131DC024B0009B33E7 /* TextureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureManager.h; path = src/Graphics/TextureManager.h; sourceTree = "<group>"; };
 		16E7A3F51AD19EF9005674F7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioManager.cpp; path = src/AudioManager/AudioManager.cpp; sourceTree = "<group>"; };
 		16E7A3F61AD19EF9005674F7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioManager.h; path = src/AudioManager/AudioManager.h; sourceTree = "<group>"; };
 		16E7A3F81AD19F0A005674F7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -94,6 +104,7 @@
 		16F2FB481AD0C1910041341D /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIManager.h; path = src/GUI/GUIManager.h; sourceTree = "<group>"; };
 		16F2FB4A1AD0C27A0041341D /* GUIScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIScreen.cpp; path = src/GUI/GUIScreen.cpp; sourceTree = "<group>"; };
 		16F2FB4B1AD0C27A0041341D /* GUIScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIScreen.h; path = src/GUI/GUIScreen.h; sourceTree = "<group>"; };
+		16F87C051DC113BA00D0AA02 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		16FE40BB1AE4804600194CF9 /* GameStateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameStateManager.cpp; path = src/GameStateManager/GameStateManager.cpp; sourceTree = "<group>"; };
 		16FE40BC1AE4804600194CF9 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateManager.h; path = src/GameStateManager/GameStateManager.h; sourceTree = "<group>"; };
 		16FE40BE1AE4882600194CF9 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = src/Game.cpp; sourceTree = "<group>"; };
@@ -105,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F87C081DC116FB00D0AA02 /* libSOIL.a in Frameworks */,
 				16AFC3DC1DBACDE900BA15E9 /* libglfw.3.2.dylib in Frameworks */,
 				16E7A3FC1AD1AAD8005674F7 /* libalut.a in Frameworks */,
 				16E7A3F91AD19F0A005674F7 /* OpenAL.framework in Frameworks */,
@@ -179,6 +191,7 @@
 		16951B041ACE17D700AE37F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16F87C051DC113BA00D0AA02 /* libSOIL.a */,
 				16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */,
 				16E7A3FB1AD1AAD8005674F7 /* libalut.a */,
 				16E7A3F81AD19F0A005674F7 /* OpenAL.framework */,
@@ -219,6 +232,10 @@
 			children = (
 				16951B0B1ACE249B00AE37F2 /* InputManager.cpp */,
 				16951B0C1ACE249B00AE37F2 /* InputManager.h */,
+				160C67CA1DC162DC0039E3DB /* GamePad.cpp */,
+				160C67CB1DC162DC0039E3DB /* GamePad.h */,
+				160C67CD1DC163990039E3DB /* GamePadXbox360.cpp */,
+				160C67CE1DC163990039E3DB /* GamePadXbox360.h */,
 			);
 			name = InputManager;
 			sourceTree = "<group>";
@@ -231,6 +248,8 @@
 				16AB28171DBD1DDD002E3242 /* ShaderManager.cpp */,
 				16AB28181DBD1DDD002E3242 /* ShaderManager.h */,
 				16AB281A1DBD1F3F002E3242 /* Shaders.h */,
+				16B56F121DC024B0009B33E7 /* TextureManager.cpp */,
+				16B56F131DC024B0009B33E7 /* TextureManager.h */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -366,17 +385,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160C67CF1DC163990039E3DB /* GamePadXbox360.cpp in Sources */,
 				16AB28191DBD1DDD002E3242 /* ShaderManager.cpp in Sources */,
 				16FE40C01AE4882600194CF9 /* Game.cpp in Sources */,
 				16E7A3F71AD19EF9005674F7 /* AudioManager.cpp in Sources */,
 				164389071ACE0384001A7211 /* main.cpp in Sources */,
 				16FE40BD1AE4804600194CF9 /* GameStateManager.cpp in Sources */,
 				1601F6911B390D5D0082AC77 /* GUIComponent.cpp in Sources */,
+				160C67CC1DC162DC0039E3DB /* GamePad.cpp in Sources */,
 				16951B091ACE1E4F00AE37F2 /* GameWindow.cpp in Sources */,
 				16951B0D1ACE249B00AE37F2 /* InputManager.cpp in Sources */,
 				16F2FB491AD0C1910041341D /* GUIManager.cpp in Sources */,
 				16F2FB4C1AD0C27A0041341D /* GUIScreen.cpp in Sources */,
 				1601F6981B390E010082AC77 /* GUIMenuItem.cpp in Sources */,
+				16B56F141DC024B0009B33E7 /* TextureManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +519,10 @@
 					/usr/local/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-lSOIL",
+					"-lGLEW",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -510,6 +536,10 @@
 					/usr/local/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-lSOIL",
+					"-lGLEW",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

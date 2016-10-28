@@ -8,6 +8,9 @@
 
 #include "ShaderManager.h"
 #include "Shaders.h"
+#include <iostream>
+#include <string>
+#include <fstream>
 
 ShaderManager* ShaderManager::m_instance = NULL;
 
@@ -31,6 +34,12 @@ bool ShaderManager::initialize()
     glAttachShader(program, vertex_shader);
     glAttachShader(program, fragment_shader);
     glLinkProgram(program);
+    
+    return true;
+}
+const bool ShaderManager::loadShaderFromFile(const char *filepath)
+{
+    
     
     return true;
 }

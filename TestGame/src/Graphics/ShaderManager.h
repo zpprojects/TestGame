@@ -13,6 +13,7 @@
 #include <vector>
 #include <GLFW/glfw3.h>
 
+
 class ShaderManager
 {
     
@@ -28,6 +29,7 @@ public:
     enum SHADERLIST{
         BASIC=0
     };
+    static const bool loadShaderFromFile(const char *filepath);
 
 private:
 

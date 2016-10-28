@@ -12,10 +12,50 @@
 #include <stdio.h>
 #include "AudioManager.h"
 #include "GameStateManager.h"
+#include "GamePad.h"
+#include "GamePadXbox360.h"
+
+
+static const char *XBOX_CONTROLLER_NAME = "Wireless 360 Controller";
 
 void InputManager::initialize()
 {
     keysHeld = keysPressed = keysReleased = 0;
+    
+    numOfGamePads = 0;
+    int present = glfwJoystickPresent(GLFW_JOYSTICK_1 );
+    
+    
+}
+bool InputManager::checkForGamePads()
+{
+    for(int i=0;i<16;i++)
+    {
+        if (glfwJoystickPresent(i)) {
+            numOfGamePads++;
+        }
+        else break;
+    }
+    if (numOfGamePads == 0) {
+        return false;
+    }
+    
+    return true;
+}
+bool InputManager::createGamePads()
+{
+    //go through each gamepad and see what type it is
+    for (int i=0; i<numOfGamePads; i++) {
+        const char *name = glfwGetJoystickName( GLFW_JOYSTICK_1 );
+
+        if ( strcmp(name, XBOX_CONTROLLER_NAME) == 0)
+        {
+            gamepadVector.push_back(new GamePadXbox360(i));
+            printf("xbox controller created.\n");
+        }
+    }
+    
+    return true;
 }
 void InputManager::processKeyboardState()
 {
@@ -57,6 +97,23 @@ void InputManager::processKeyboardState()
     //not considered to be held
     keysPressed = currentKeyboardState & ~keysHeld;
 }
+void InputManager::processGamePadState()
+{
+    int buttonsPressed;
+    for(int i=0;i<numOfGamePads;i++)
+    {
+        gamepadVector.at(i)->queryGamePad(buttonsPressed);
+        /*
+        printf( "\n\n\n\n\n\n\n\n\n\n" );
+        int buttonCount;
+        const unsigned char *buttons = glfwGetJoystickButtons( GLFW_JOYSTICK_1, &buttonCount );
+        for (int i=0;i<buttonCount;i++)
+        {
+            printf("%i" , buttons[i]);
+        }*/
+    }
+    
+}
 void InputManager::processKeys()
 {
     if(KEYS::KEY_ESC & keysHeld)
@@ -67,6 +124,42 @@ void InputManager::processKeys()
         AudioManager::instance()->playBuffer(0);
     if(KEYS::KEY_S & keysPressed)
         AudioManager::instance()->playBuffer(1);
+    
+}
+void InputManager::processGamePadButtons()
+{
+    int buttonsPressed, buttonsReleased, buttonsHeld = 0;
+    
+    gamepadVector.at(0)->getButtonStatus(buttonsReleased, buttonsHeld, buttonsPressed);
+    
+    if(KEYS::KEY_ESC & buttonsHeld)
+    {
+        GameStateManager::instance()->setState(GAMESTATE_CLOSING);
+    }
+    if(KEYS::KEY_D & buttonsPressed)
+        AudioManager::instance()->playBuffer(0);
+    if(KEYS::KEY_S & buttonsPressed)
+        AudioManager::instance()->playBuffer(1);
+    
+    
+    printf( "\n\n\n\n\n\n\n\n\n\n" );
+    
+    char tempBuffer[33];
+    tempBuffer[32] = '\0';
+    int2bin(buttonsPressed, tempBuffer, 32);
+    printf(tempBuffer); printf( "\n" );
+    
+    tempBuffer[32] = '\0';
+    int2bin(buttonsHeld, tempBuffer, 32);
+    printf(tempBuffer); printf( "\n" );
+    
+    tempBuffer[32] = '\0';
+    int2bin(buttonsReleased, tempBuffer, 32);
+    printf(tempBuffer); printf( "\n" );
+    
+    
+    
+    
     
 }
 char* InputManager::int2bin(int a, char *buffer, int buf_size)
