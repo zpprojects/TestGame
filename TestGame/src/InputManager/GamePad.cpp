@@ -7,6 +7,7 @@
 //
 
 #include "GamePad.h"
+#include <GLFW/glfw3.h>
 
 GamePad::GamePad(int initgamePadNum)
 {
@@ -19,5 +20,10 @@ GamePad::~GamePad()
 }
 bool GamePad::initialize()
 {
+    return true;
+}
+bool GamePad::queryGamePad(int &BUTTONsPressed)
+{
+    
     return true;
 }

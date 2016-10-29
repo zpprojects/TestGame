@@ -14,9 +14,11 @@
 #include "GameStateManager.h"
 #include "GamePad.h"
 #include "GamePadXbox360.h"
+#include "GenericOneAxisGamePad.h"
 
 
 static const char *XBOX_CONTROLLER_NAME = "Wireless 360 Controller";
+static const char *USB_GAMEPAD_NAME = "usb gamepad";
 
 void InputManager::initialize()
 {
@@ -47,11 +49,16 @@ bool InputManager::createGamePads()
     //go through each gamepad and see what type it is
     for (int i=0; i<numOfGamePads; i++) {
         const char *name = glfwGetJoystickName( GLFW_JOYSTICK_1 );
-
+        printf(name);
         if ( strcmp(name, XBOX_CONTROLLER_NAME) == 0)
         {
             gamepadVector.push_back(new GamePadXbox360(i));
             printf("xbox controller created.\n");
+        }
+        if ( strcmp(name, USB_GAMEPAD_NAME) == 0)
+        {
+            gamepadVector.push_back(new GenericOneAxisGamePad(i));
+            printf("Nes Controller created.\n");
         }
     }
     
@@ -100,6 +107,8 @@ void InputManager::processKeyboardState()
 void InputManager::processGamePadState()
 {
     int buttonsPressed;
+    if (numOfGamePads == 0)
+        return;
     for(int i=0;i<numOfGamePads;i++)
     {
         gamepadVector.at(i)->queryGamePad(buttonsPressed);
@@ -129,14 +138,16 @@ void InputManager::processKeys()
 void InputManager::processGamePadButtons()
 {
     int buttonsPressed, buttonsReleased, buttonsHeld = 0;
-    
+    if (numOfGamePads == 0)
+        return;
+        
     gamepadVector.at(0)->getButtonStatus(buttonsReleased, buttonsHeld, buttonsPressed);
     
     if(KEYS::KEY_ESC & buttonsHeld)
     {
         GameStateManager::instance()->setState(GAMESTATE_CLOSING);
     }
-    if(KEYS::KEY_D & buttonsPressed)
+    if(KEYS::KEY_S & buttonsPressed)
         AudioManager::instance()->playBuffer(0);
     if(KEYS::KEY_S & buttonsPressed)
         AudioManager::instance()->playBuffer(1);

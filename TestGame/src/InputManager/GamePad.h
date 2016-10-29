@@ -34,7 +34,7 @@ public:
     GamePad(int initgamePadNum);
     ~GamePad();
     
-    virtual bool queryGamePad(int &BUTTONsPressed) = 0;
+    virtual bool queryGamePad(int &BUTTONsPressed);
     void getButtonStatus(int &mbuttonsReleased, int &mbuttonsHeld, int &mbuttonsPressed)
     {
         mbuttonsReleased = buttonsReleased;
@@ -43,7 +43,7 @@ public:
     };
     
 protected:
-    virtual bool initialize() = 0;
+    virtual bool initialize();
     int gamePadNum;
     int currentGamePadState, buttonsReleased, buttonsHeld, buttonsPressed;
 };
