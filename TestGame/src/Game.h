@@ -15,6 +15,7 @@ class GameWindow;
 class InputManager;
 class AudioManager;
 class GameStateManager;
+class GUIManager;
 
 
 class Game
@@ -37,10 +38,11 @@ public:
     
 private:
     
-    GameWindow* gWindow;
-    InputManager* gInputManager;
-    AudioManager* gAudioManager;
-    GameStateManager* gGameStateManager;
+    GameWindow*             gWindow;
+    InputManager*           gInputManager;
+    AudioManager*           gAudioManager;
+    GameStateManager*       gGameStateManager;
+    GUIManager*             gGUIManager;
     
     static Game* m_instance;
     Game();

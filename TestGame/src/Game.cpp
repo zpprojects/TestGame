@@ -11,6 +11,9 @@
 #include "AudioManager.h"
 #include "InputManager.h"
 #include "GameStateManager.h"
+#include "GUI/GUIManager.h"
+#include "GUI/GUIScreen.h"
+#include "GUI/GUIComponents/GUIButton.h"
 
 Game* Game::m_instance = NULL;
 
@@ -29,6 +32,12 @@ bool Game::initialize()
         gInputManager->createGamePads();
     gAudioManager = AudioManager::instance();
     gAudioManager->loadFileIntoBuffer("./Resources/Audio/SoundEffects/gunshot.wav");
+    gGUIManager = GUIManager::instance();
+    GUIButton* button = new GUIButton(10,10);
+    button->loadTexture("./Resources/Textures/Test/newgame.png");
+    GUIScreen* mainScreen = new GUIScreen();
+    mainScreen->addComponenet(button);
+    
     
     return true;
 }

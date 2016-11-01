@@ -15,8 +15,14 @@ class GUIComponent
 {
 
 public:
+    
+    GUIComponent(int initx, int inity);
+    ~GUIComponent() {};
+    virtual void update(float dt) = 0;
+    virtual void draw(){};
 
 private:
+    int posx, posy;
     
 };
 

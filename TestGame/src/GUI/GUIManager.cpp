@@ -8,16 +8,8 @@
 
 #include "GUIManager.h"
 
+GUIManager* GUIManager::m_instance = NULL;
 
-
-GUIManager::GUIManager()
-{
-
-}
-GUIManager::~GUIManager()
-{
-    
-}
 void GUIManager::drawCurrentScreen()
 {
     

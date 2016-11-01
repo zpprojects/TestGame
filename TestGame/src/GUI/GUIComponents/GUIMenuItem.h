@@ -16,7 +16,7 @@ class GUIMenuItem : GUIComponent
 {
 public:
     
-    GUIMenuItem(){};
+    GUIMenuItem(int initx, int inity);
     ~GUIMenuItem(){};
     void update(float dt);
     void draw();

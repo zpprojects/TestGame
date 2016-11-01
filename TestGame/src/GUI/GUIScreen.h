@@ -10,6 +10,10 @@
 #define __TestGame__GUIScreen__
 
 #include <GLFW/glfw3.h>
+#include <vector>
+
+class GUIComponent;
+
 
 class GUIScreen
 {
@@ -22,9 +26,11 @@ public:
     void loadData();
     void update(float dt);
     void draw();
+    void addComponenet(GUIComponent* guiComponent);
     
 private:
     
+    std::vector<GUIComponent*> componentsVector;
     GLuint myVBO;
     GLuint myIndices;
     

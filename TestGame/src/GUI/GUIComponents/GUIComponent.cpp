@@ -7,3 +7,9 @@
 //
 
 #include "GUIComponent.h"
+
+GUIComponent::GUIComponent(int initx, int inity)
+{
+    posx = initx;
+    posy = inity;
+};

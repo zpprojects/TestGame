@@ -16,7 +16,7 @@ ShaderManager* ShaderManager::m_instance = NULL;
 
 ShaderManager::ShaderManager()
 {
-    
+    initialize();
 }
 bool ShaderManager::initialize()
 {
@@ -34,6 +34,12 @@ bool ShaderManager::initialize()
     glAttachShader(program, vertex_shader);
     glAttachShader(program, fragment_shader);
     glLinkProgram(program);
+    
+    shaderVector.push_back(program);
+    
+    glDeleteShader(fragment_shader);
+    glDeleteShader(vertex_shader);
+    
     
     return true;
 }

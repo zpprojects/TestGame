@@ -7,3 +7,16 @@
 //
 
 #include "GUIMenuItem.h"
+#include "GUIComponent.h"
+
+GUIMenuItem::GUIMenuItem(int initx, int inity) : GUIComponent(initx, inity)
+{
+    
+}
+void GUIMenuItem::update(float dt)
+{
+    
+}
+void GUIMenuItem::draw(){
+    
+}

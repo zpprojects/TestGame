@@ -1,105 +1,100 @@
-/*
- * Copyright (c) 2006-2007 Erin Catto http://www.box2d.org
- *
- * This software is provided 'as-is', without any express or implied
- * warranty.  In no event will the authors be held liable for any damages
- * arising from the use of this software.
- * Permission is granted to anyone to use this software for any purpose,
- * including commercial applications, and to alter it and redistribute it
- * freely, subject to the following restrictions:
- * 1. The origin of this software must not be misrepresented; you must not
- * claim that you wrote the original software. If you use this software
- * in a product, an acknowledgment in the product documentation would be
- * appreciated but is not required.
- * 2. Altered source versions must be plainly marked as such, and must not be
- * misrepresented as being the original software.
- * 3. This notice may not be removed or altered from any source distribution.
- */
+#include <cstdio>
 
+#include <GLFW/glfw3.h>
+#include "SOIL.h"
 
-#include <stdio.h>
-#include <Box2D/Box2D.h>
+// function declarations
+void drawscene();
+void idlefunc();
+void updatedisplay();
 
-// This is a simple example of building and running a simulation
-// using Box2D. Here we create a large ground box and a small dynamic
-// box.
-// There are no graphics for this example. Box2D is meant to be used
-// with your rendering engine in your game engine.
-int main(int argc, char** argv)
-{
-    B2_NOT_USED(argc);
-    B2_NOT_USED(argv);
-    
-    // Define the gravity vector.
-    b2Vec2 gravity(0.0f, -10.0f);
-    
-    // Construct a world object, which will hold and simulate the rigid bodies.
-    b2World world(gravity);
-    
-    // Define the ground body.
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0.0f, -10.0f);
-    
-    // Call the body factory which allocates memory for the ground body
-    // from a pool and creates the ground box shape (also from a pool).
-    // The body is also added to the world.
-    b2Body* groundBody = world.CreateBody(&groundBodyDef);
-    
-    // Define the ground box shape.
-    b2PolygonShape groundBox;
-    
-    // The extents are the half-widths of the box.
-    groundBox.SetAsBox(50.0f, 10.0f);
-    
-    // Add the ground fixture to the ground body.
-    groundBody->CreateFixture(&groundBox, 0.0f);
-    
-    // Define the dynamic body. We set its position and call the body factory.
-    b2BodyDef bodyDef;
-    bodyDef.type = b2_dynamicBody;
-    bodyDef.position.Set(0.0f, 4.0f);
-    b2Body* body = world.CreateBody(&bodyDef);
-    
-    // Define another box shape for our dynamic body.
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(1.0f, 1.0f);
-    
-    // Define the dynamic body fixture.
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;
-    
-    // Set the box density to be non-zero, so it will be dynamic.
-    fixtureDef.density = 1.0f;
-    
-    // Override the default friction.
-    fixtureDef.friction = 0.3f;
-    
-    // Add the shape to the body.
-    body->CreateFixture(&fixtureDef);
-    
-    // Prepare for simulation. Typically we use a time step of 1/60 of a
-    // second (60Hz) and 10 iterations. This provides a high quality simulation
-    // in most game scenarios.
-    float32 timeStep = 1.0f / 60.0f;
-    int32 velocityIterations = 6;
-    int32 positionIterations = 2;
-    
-    // This is our little game loop.
-    for (int32 i = 0; i < 60; ++i)
-    {
-        // Instruct the world to perform a single step of simulation.
-        // It is generally best to keep the time step and iterations fixed.
-        world.Step(timeStep, velocityIterations, positionIterations);
-        
-        // Now print the position and angle of the body.
-        b2Vec2 position = body->GetPosition();
-        float32 angle = body->GetAngle();
-        
-        printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+// global data
+GLuint texture; // our example texture
+
+int main(int argc, char **argv) {
+    if (!glfwInit()) {
+        fprintf(stderr, "Failed to initialize GLFW\n");
+        return 1;
     }
     
-    // When the world destructor is called, all bodies and joints are freed. This can
-    // create orphaned pointers, so be careful about your world management.
+    if (!glfwCreateWindow(640, 480, 0, 0, 0, 0, 16, 0, GLFW_WINDOW)) {
+        fprintf(stderr, "Failed to open GLFW window\n");
+        return 1;
+    }
     
+    // enable vsync (if available)
+    glfwSwapInterval(1);
+    
+    // load textures
+    texture = SOIL_load_OGL_texture(
+                                    "tex.png",
+                                    SOIL_LOAD_AUTO,
+                                    SOIL_CREATE_NEW_ID,
+                                    SOIL_FLAG_POWER_OF_TWO | SOIL_FLAG_MIPMAPS | SOIL_FLAG_DDS_LOAD_DIRECT
+                                    );
+    
+    // check for an error during the texture loading
+    if (!texture) {
+        printf("SOIL loading error: '%s'\n", SOIL_last_result());
+    }
+    
+    while (glfwGetWindowParam(GLFW_OPENED)) {
+        idlefunc();
+    }
+    
+    // if we get here something went wrong
     return 0;
+}
+
+// this function gets called every frame
+void idlefunc() {
+    updatedisplay();
+    drawscene();
+}
+
+// set up te display
+void updatedisplay() {
+    int screen_width, screen_height;
+    glfwGetWindowSize(&screen_width, &screen_height);
+    
+    if (screen_height <= 0) screen_height = 1;
+    if (screen_width <= 0) screen_width = 1;
+    
+    glViewport(0, 0, screen_width, screen_height);
+    
+    glClearColor(0.02f, 0.02f, 0.02f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    glEnable(GL_TEXTURE_2D);
+    glDisable(GL_DEPTH_TEST);
+    
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(0.0, screen_width, screen_height, 0.0, 0.0, 1.0);
+    
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
+    // displacement trick for exact pixelization
+    glTranslatef(0.375f, 0.375f, 0.0f);
+}
+
+// draw the scene in this function
+void drawscene() {
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glPushMatrix();
+    glTranslatef(10.0f, 10.0f, 0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0f, 0.0f);
+    glVertex2f(0.0f, 0.0f);
+    glTexCoord2f(0.0f, 128.0f);
+    glVertex2f(0.0f, 128.0f);
+    glTexCoord2f(128.0f, 128.0f);
+    glVertex2f(128.0f, 128.0f);
+    glTexCoord2f(128.0f, 0.0f);
+    glVertex2f(128.0f, 0.0f);
+    glEnd();
+    glPopMatrix();
+    
+    glfwSwapBuffers();
 }

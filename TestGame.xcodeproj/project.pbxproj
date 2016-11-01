@@ -22,6 +22,7 @@
 		16951B031ACE0BF900AE37F2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16951B021ACE0BF900AE37F2 /* CoreVideo.framework */; };
 		16951B091ACE1E4F00AE37F2 /* GameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16951B071ACE1E4F00AE37F2 /* GameWindow.cpp */; };
 		16951B0D1ACE249B00AE37F2 /* InputManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16951B0B1ACE249B00AE37F2 /* InputManager.cpp */; };
+		1695DD791DC80D0D00AA1735 /* GUIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1695DD771DC80D0D00AA1735 /* GUIButton.cpp */; };
 		16A6437A1DC44FE5004D063E /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A6436C1DC44FD0004D063E /* libBox2D.a */; };
 		16AB28191DBD1DDD002E3242 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16AB28171DBD1DDD002E3242 /* ShaderManager.cpp */; };
 		16AFC3DC1DBACDE900BA15E9 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AFC3DB1DBACDE900BA15E9 /* libglfw.3.2.dylib */; };
@@ -90,6 +91,8 @@
 		16951B081ACE1E4F00AE37F2 /* GameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameWindow.h; path = src/GameWindow/GameWindow.h; sourceTree = "<group>"; };
 		16951B0B1ACE249B00AE37F2 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InputManager.cpp; path = src/InputManager/InputManager.cpp; sourceTree = "<group>"; };
 		16951B0C1ACE249B00AE37F2 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputManager.h; path = src/InputManager/InputManager.h; sourceTree = "<group>"; };
+		1695DD771DC80D0D00AA1735 /* GUIButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIButton.cpp; path = src/GUI/GUIComponents/GUIButton.cpp; sourceTree = "<group>"; };
+		1695DD781DC80D0D00AA1735 /* GUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIButton.h; path = src/GUI/GUIComponents/GUIButton.h; sourceTree = "<group>"; };
 		16A643601DC44E6A004D063E /* Box2D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Box2D.h; path = ../../../../usr/local/include/Box2D/Box2D.h; sourceTree = "<group>"; };
 		16A643651DC44FD0004D063E /* glfw3Config.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = glfw3Config.cmake; sourceTree = "<group>"; };
 		16A643661DC44FD0004D063E /* glfw3ConfigVersion.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = glfw3ConfigVersion.cmake; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				1601F6971B390E010082AC77 /* GUIMenuItem.h */,
 				1601F68F1B390D5D0082AC77 /* GUIComponent.cpp */,
 				1601F6901B390D5D0082AC77 /* GUIComponent.h */,
+				1695DD771DC80D0D00AA1735 /* GUIButton.cpp */,
+				1695DD781DC80D0D00AA1735 /* GUIButton.h */,
 			);
 			name = GUIComponents;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				16F2FB4C1AD0C27A0041341D /* GUIScreen.cpp in Sources */,
 				1601F6981B390E010082AC77 /* GUIMenuItem.cpp in Sources */,
 				16B56F141DC024B0009B33E7 /* TextureManager.cpp in Sources */,
+				1695DD791DC80D0D00AA1735 /* GUIButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,22 +10,30 @@
 #define __TestGame__GUIManager__
 
 #include <GLFW/glfw3.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <vector>
+
+class GUIScreen;
 
 class GUIManager
 {
+private:
+    
+    static GUIManager* m_instance;
+    GUIManager() {};
+    ~GUIManager() {};
+    std::vector<GUIScreen*> screenVector;
     
 public:
     
-    GUIManager();
-    ~GUIManager();
+    static GUIManager* instance()
+    {
+        if(!m_instance)
+            m_instance = new GUIManager();
+        return m_instance;
+    }
+    
     void drawCurrentScreen();
     
-    
-private:
-    
-
 };
 
 #endif /* defined(__TestGame__GUIManager__) */
